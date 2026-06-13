@@ -200,6 +200,7 @@ function evaluarRespuesta(botonSeleccionado, claveCorrecta) {
     }
 
     nextBtn.disabled = false;
+    mostrarExplicacion(); // <-- AGREGALA TAMBIÉN ACÁ
 }
 
 /**
@@ -221,6 +222,7 @@ function forzarRespuestaPorTiempo() {
     });
 
     ejecutarFeedbackVisual(false);
+    mostrarExplicacion(); // <--AGREGÁ ESTA LÍNEA ACÁ
     nextBtn.disabled = false;
 }
 
@@ -323,4 +325,27 @@ function reiniciarJuego() {
     welcomeScreen.classList.remove('hidden');
     startBtn.style.display = 'inline-block';
     loadingDb.classList.add('hidden');
+}
+// FUNCIÓN PARA MOSTRAR LA EXPLICACIÓN DE SUPABASE
+function mostrarExplicacion() {
+    const explicacionContainer = document.getElementById('explicacion-container');
+    // Obtenemos la pregunta que está activa ahora
+    const preguntaActual = preguntasSeleccionadas[indicePreguntaActual];
+    
+    if (explicacionContainer && preguntaActual && preguntaActual.explicacion) {
+        // Le metemos el texto de la base de datos
+        explicacionContainer.innerHTML = `<strong>Explicación:</strong> ${preguntaActual.explicacion}`;
+        // Hacemos que la cajita aparezca en pantalla
+        explicacionContainer.style.display = 'block';
+    }
+}
+
+// CORRECCIÓN PARA EL CASO 3: ESCONDERLA AL TOCAR EL BOTÓN SIGUIENTE
+if (document.getElementById('btn-siguiente')) {
+    document.getElementById('btn-siguiente').addEventListener('click', () => {
+        const explicacionContainer = document.getElementById('explicacion-container');
+        if (explicacionContainer) {
+            explicacionContainer.style.display = 'none';
+        }
+    });
 }
