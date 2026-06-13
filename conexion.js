@@ -5,8 +5,8 @@
 
 // 1. CONFIGURACIÓN DE SUPABASE
 // Reemplazá estas credenciales con las que te provee Supabase al crear tu proyecto
-const SUPABASE_URL = "https://TU_PROYECTO_ID.supabase.co";
-const SUPABASE_ANON_KEY = "TU_SUPER_ANON_KEY_AQUÍ";
+const SUPABASE_URL = "https://wteeonxrbfvoqtvretnd.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_Xm490-Ej7r9Wtho-Fl-l5g_Ab82xcCo";
 
 // Inicialización del cliente Supabase
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
