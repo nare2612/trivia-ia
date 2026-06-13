@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria de Ciencias - ISFT N.º 244 | Trivia IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-stars"></div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-placeholder">
+                <i class="fa-solid fa-brain brain-icon"></i>
+            </div>
+            <h1>Feria de Ciencias</h1>
+            <h2>Instituto Superior de Formación Técnica N.º 244</h2>
+            <p class="subtitle">Descubrí cuánto sabés sobre Inteligencia Artificial</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="welcome-screen" class="card fade-in">
+            <h3><i class="fa-solid fa-gamepad"></i> ¡Desafía a la Mente Artificial!</h3>
+            <p>Se te asignarán 10 preguntas aleatorias sobre Machine Learning, Redes Neuronales, Ética, ChatGPT y más. ¿Estás listo para el test?</p>
+            <button id="start-btn" class="btn btn-primary">Iniciar Cuestionario</button>
+            <div id="loading-db" class="loading-spinner hidden">
+                <i class="fa-solid fa-circle-notch fa-spin"></i> Conectando con la Matriz de Datos...
+            </div>
+        </section>
+
+        <section id="quiz-screen" class="card hidden">
+            <div class="quiz-header">
+                <div class="quiz-info">
+                    <span id="question-number">Pregunta: 0/10</span>
+                    <span id="timer"><i class="fa-regular fa-clock"></i> 00:30</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="quiz-body">
+                <h3 id="question-text">Cargando pregunta...</h3>
+                <div id="options-container" class="options-grid">
+                    </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="next-btn" class="btn btn-secondary" disabled>Siguiente <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <section id="result-screen" class="card hidden text-center">
+            <div id="result-icon-container"></div>
+            <h3 id="result-status">¡Terminado!</h3>
+            <p id="result-message" class="result-msg">Mensaje personalizado basado en rendimiento.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card correct">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span class="stat-label">Correctas</span>
+                    <span id="stat-correct" class="stat-value">0</span>
+                </div>
+                <div class="stat-card incorrect">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <span class="stat-label">Incorrectas</span>
+                    <span id="stat-incorrect" class="stat-value">0</span>
+                </div>
+                <div class="stat-card percentage">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="stat-label">Porcentaje</span>
+                    <span id="stat-percent" class="stat-value">0%</span>
+                </div>
+            </div>
+
+            <button id="restart-btn" class="btn btn-primary"><i class="fa-solid fa-rotate-right"></i> Intentar de Nuevo</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 - ISFT N.º 244 | Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial</p>
+            <p class="footer-subtext">Desarrollado para la muestra anual de tecnología.</p>
+        </div>
+    </footer>
+
+    <script src="conexion.js"></script>
+</body>
+</html>
