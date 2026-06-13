@@ -9,7 +9,7 @@ const SUPABASE_URL = "https://wteeonxrbfvoqtvretnd.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_Xm490-Ej7r9Wtho-Fl-l5g_Ab82xcCo";
 
 // Inicialización del cliente Supabase
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 2. VARIABLES DE ESTADO GLOBAL DEL JUEGO
 let bancoPreguntasCompleto = [];
