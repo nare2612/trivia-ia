@@ -12,7 +12,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_Xm490-Ej7r9Wtho-Fl-l5g_Ab82xcCo";
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 2. VARIABLES DE ESTADO GLOBAL DEL JUEGO
-let bancoPreguntas Completo = [];
+let bancoPreguntasCompleto = [];
 let preguntasSeleccionadas = [];
 let indicePreguntaActual = 0;
 let respuestasCorrectas = 0;
