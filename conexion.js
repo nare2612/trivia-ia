@@ -159,10 +159,7 @@ function mostrarPregunta() {
         boton.classList.add('option-btn');
         boton.innerHTML = `<span>${opcion.texto}</span> <i class="fa-solid fa-circle-nodes opacity-0"></i>`;
         boton.dataset.clave = opcion.clave;
-        boton.addEventListener('click', () => {
-            evaluarRespuesta(boton, preguntaActual.respuesta_correcta);
-            mostrarExplicacion();
-        });
+        boton.addEventListener('click', () => evaluarRespuesta(boton, preguntaActual.respuesta_correcta));
         optionsContainer.appendChild(boton);
     });
 
@@ -217,6 +214,7 @@ function evaluarRespuesta(botonSeleccionado, claveCorrecta) {
             if (btn.dataset.clave === claveCorrecta) {
                 btn.classList.add('correct-answer');
                 btn.querySelector('i').className = "fa-solid fa-circle-check";
+                mostrarExplicacion();
             }
         });
         ejecutarFeedbackVisual(false);
