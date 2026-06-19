@@ -13,6 +13,8 @@ supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 2. VARIABLES DE ESTADO GLOBAL DEL JUEGO
 let bancoPreguntasCompleto = [];
+let nombreParticipante = "";
+let cursoParticipante = "";
 let preguntasSeleccionadas = [];
 let indicePreguntaActual = 0;
 let respuestasCorrectas = 0;
@@ -46,7 +48,24 @@ const statIncorrect = document.getElementById('stat-incorrect');
 const statPercent = document.getElementById('stat-percent');
 
 // 4. EVENT LISTENERS PRINCIPALES
-startBtn.addEventListener('click', iniciarJuego);
+startBtn.addEventListener('click', () => {
+    // 1. Capturamos lo que escribieron en las cajitas del HTML
+    const inputNombre = document.getElementById('input-nombre').value.trim();
+    const inputCurso = document.getElementById('input-curso').value.trim();
+
+    // 2. Validamos que no estén vacíos
+    if (inputNombre === "" || inputCurso === "") {
+        alert("Por favor, completa tu Nombre y Curso antes de iniciar el desafío.");
+        return; // Esto frena el juego y no lo deja avanzar
+    }
+
+    // 3. Si completó todo, guardamos los datos en las variables globales
+    nombreParticipante = inputNombre;
+    cursoParticipante = inputCurso;
+
+    // 4. Ejecutamos la función original que arranca la trivia
+    iniciarJuego();
+});
 nextBtn.addEventListener('click', avanzarPregunta);
 restartBtn.addEventListener('click', reiniciarJuego);
 
