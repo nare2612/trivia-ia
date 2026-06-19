@@ -31,7 +31,17 @@
         <section id="welcome-screen" class="card fade-in">
             <h3><i class="fa-solid fa-gamepad"></i> ¡Desafía a la Mente Artificial!</h3>
             <p>Se te asignarán 10 preguntas aleatorias sobre Machine Learning, Redes Neuronales, Ética, ChatGPT y más. ¿Estás listo para el test?</p>
-            <button id="start-btn" class="btn btn-primary">Iniciar Cuestionario</button>
+           <div id="form-perfil" style="margin-top: 20px; margin-bottom: 25px; text-align: left; max-width: 100%;">
+            <div style="margin-bottom: 15px;">
+                <label for="input-nombre" style="display: block; color: #00f2fe; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">Nombre y Apellido:</label>
+                <input type="text" id="input-nombre" placeholder="Ej: Juan Pérez" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #00f2fe; background: rgba(255,255,255,0.05); color: #fff; box-sizing: border-box; font-size: 1rem;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="input-curso" style="display: block; color: #00f2fe; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">Curso / Institución:</label>
+                <input type="text" id="input-curso" placeholder="Ej: 5to Año - ISFT 244" required style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #00f2fe; background: rgba(255,255,255,0.05); color: #fff; box-sizing: border-box; font-size: 1rem;">
+            </div>
+        </div>
+             <button id="start-btn" class="btn btn-primary">Iniciar Cuestionario</button>
             <div id="loading-db" class="loading-spinner hidden">
                 <i class="fa-solid fa-circle-notch fa-spin"></i> Conectando con la Matriz de Datos...
             </div>
