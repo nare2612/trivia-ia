@@ -67,6 +67,7 @@ startBtn.addEventListener('click', () => {
     iniciarJuego();
 });
 nextBtn.addEventListener('click', avanzarPregunta);
+
 restartBtn.addEventListener('click', reiniciarJuego);
 
 /**
@@ -341,6 +342,13 @@ function dispararConfetti() {
  * Resetea variables para volver a jugar sin recargar página
  */
 function reiniciarJuego() {
+    // Limpiamos los campos de texto en el formulario
+    document.getElementById('input-nombre').value = "";
+    document.getElementById('input-curso').value = "";
+
+    // Reseteamos las variables en la memoria
+    nombreParticipante = "";
+    cursoParticipante = "";
     resultScreen.classList.add('hidden');
     welcomeScreen.classList.remove('hidden');
     startBtn.style.display = 'inline-block';
