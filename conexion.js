@@ -159,7 +159,10 @@ function mostrarPregunta() {
         boton.classList.add('option-btn');
         boton.innerHTML = `<span>${opcion.texto}</span> <i class="fa-solid fa-circle-nodes opacity-0"></i>`;
         boton.dataset.clave = opcion.clave;
-        boton.addEventListener('click', () => evaluarRespuesta(boton, preguntaActual.respuesta_correcta));
+        boton.addEventListener('click', () => {
+            evaluarRespuesta(boton, preguntaActual.respuesta_correcta);
+            mostrarExplicacion();
+        });
         optionsContainer.appendChild(boton);
     });
 
