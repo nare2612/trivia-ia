@@ -357,14 +357,17 @@ function reiniciarJuego() {
 // FUNCIÓN PARA MOSTRAR LA EXPLICACIÓN DE SUPABASE
 function mostrarExplicacion() {
     const explicacionContainer = document.getElementById('explicacion-container');
-    // Obtenemos la pregunta que está activa ahora
     const preguntaActual = preguntasSeleccionadas[indicePreguntaActual];
-    
+
     if (explicacionContainer && preguntaActual && preguntaActual.explicacion) {
-        // Le metemos el texto de la base de datos
+        // Metemos el texto de la base de datos
         explicacionContainer.innerHTML = `<strong>Explicación:</strong> ${preguntaActual.explicacion}`;
-        // Hacemos que la cajita aparezca en pantalla
+        
+        // Forzamos que se muestre en pantalla y le damos un color claro por las dudas
         explicacionContainer.style.display = 'block';
+        explicacionContainer.style.visibility = 'visible';
+        explicacionContainer.style.color = '#ffffff'; 
+    
     }
 }
 
