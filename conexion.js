@@ -214,7 +214,6 @@ function evaluarRespuesta(botonSeleccionado, claveCorrecta) {
             if (btn.dataset.clave === claveCorrecta) {
                 btn.classList.add('correct-answer');
                 btn.querySelector('i').className = "fa-solid fa-circle-check";
-                mostrarExplicacion();
             }
         });
         ejecutarFeedbackVisual(false);
