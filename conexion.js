@@ -342,7 +342,7 @@ function dispararConfetti() {
  * Resetea variables para volver a jugar sin recargar página
  */
 function reiniciarJuego() {
-    // Limpiamos los campos de texto en el formulario
+    // Limpiamos los campos de texto reales de la pantalla usando sus IDs
     document.getElementById('input-nombre').value = "";
     document.getElementById('input-curso').value = "";
 
