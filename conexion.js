@@ -284,6 +284,7 @@ function mostrarResultadosFinales() {
     statCorrect.textContent = respuestasCorrectas;
     statIncorrect.textContent = respuestasIncorrectas;
     statPercent.textContent = `${porcentajeFinal}%`;
+    guardarParticipanteEnSupabase(respuestasCorrectas);
 
     // Evaluación de rangos según requerimiento institucional
     if (porcentajeFinal >= 90) {
@@ -367,4 +368,21 @@ if (document.getElementById('btn-siguiente')) {
             explicacionContainer.style.display = 'none';
         }
     });
+}
+
+async function guardarParticipanteEnSupabase(porcentaje) {
+    try {
+        await supabase
+            .from('participantes')
+            .insert([
+                { 
+                    nivel_educativo: cursoParticipante, 
+                    tema_interes: nombreParticipante,    
+                    puntaje_final: porcentaje           
+                }
+            ]);
+        console.log("¡Datos guardados con éxito!");
+    } catch (err) {
+        console.error("Error:", err);
+    }
 }
