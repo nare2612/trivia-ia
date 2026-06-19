@@ -371,9 +371,9 @@ function mostrarExplicacion() {
     }
 }
 
-// CORRECCIÓN PARA EL CASO 3: ESCONDERLA AL TOCAR EL BOTÓN SIGUIENTE
-if (document.getElementById('btn-siguiente')) {
-    document.getElementById('btn-siguiente').addEventListener('click', () => {
+/// CORRECCIÓN PARA ESCONDER LA EXPLICACIÓN AL TOCAR EL BOTÓN SIGUIENTE
+if (document.getElementById('next-btn')) {
+    document.getElementById('next-btn').addEventListener('click', () => {
         const explicacionContainer = document.getElementById('explicacion-container');
         if (explicacionContainer) {
             explicacionContainer.style.display = 'none';
