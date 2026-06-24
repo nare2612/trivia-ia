@@ -1,30 +1,38 @@
 /* ==========================================================================
-   CONFIGURACIÓN GENERAL Y VARIABLES (Estilo Cyberpunk / IA Tecnológica)
+   CONFIGURACIÓN GENERAL Y VARIABLES (Estilo Divertido, Infantil y Lúdico)
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 :root {
-    --bg-primary: #0a0b10;
-    --bg-card: rgba(20, 24, 38, 0.85);
-    --text-main: #f0f4f8;
-    --text-muted: #94a3b8;
-    --color-electric-blue: #00d2ff;
-    --color-neon-purple: #9d4edd;
-    --color-correct: #10b981;
-    --color-incorrect: #ef4444;
-    --font-cyber: 'Orbitron', sans-serif;
-    --font-sans: 'Poppins', sans-serif;
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Paleta de colores súper dulces, vivos y amigables */
+    --bg-primary: #f3f9fe;          /* Fondo azul cielo muy suave */
+    --bg-card: #ffffff;             /* Tarjetas blanco nube */
+    --text-main: #3a2e4b;           /* Texto oscuro suave (marrón/púrpura cálido) */
+    --text-muted: #746585;          /* Secundarios gris-morado amigable */
+    --color-electric-blue: #54b2f7; /* Azul cielo para realces importantes */
+    --color-neon-purple: #a78bfa;   /* Lila mágico para toques divertidos */
+    --color-correct: #4ade80;       /* Verde manzana para aciertos */
+    --color-incorrect: #ff8da1;     /* Rosa frutilla para errores */
+    
+    /* Tipografías redondeadas, amigables y legibles para niños */
+    --font-cyber: 'Fredoka', 'Quicksand', sans-serif;
+    --font-sans: 'Fredoka', 'Quicksand', sans-serif;
+    
+    /* Animaciones fluidas estilo rebote (bouncy) */
+    --transition-smooth: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --toy-shadow: #d1e2f2;          /* Sombra de relieve tipo juguete */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-sans);
 }
 
 body {
     background-color: var(--bg-primary);
     color: var(--text-main);
-    font-family: var(--font-sans);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -42,134 +50,160 @@ body {
 .text-center { text-align: center; }
 .hidden { display: none !important; }
 
-/* Fondo de partículas neón abstractas (Efecto tecnológico) */
+/* Fondo mágico con burbujas y nubes de colores flotando suavemente */
 .bg-stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 20%, #1e1b4b 0%, transparent 40%),
-                radial-gradient(circle at 70% 80%, #0f172a 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 20%, rgba(255, 141, 161, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(84, 178, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.12) 0%, transparent 40%);
     z-index: -1;
 }
 
 /* ==========================================================================
-   HEADER & FOOTER
+   HEADER & FOOTER (Alegres e Institucionales)
    ========================================================================== */
 header {
     padding: 40px 0 20px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(157, 78, 221, 0.2);
-    background: linear-gradient(180deg, rgba(10,11,16,1) 0%, rgba(20,24,38,0.4) 100%);
+    border-bottom: 4px dashed #e2effa;
+    background: #ffffff;
+    box-shadow: 0 8px 0px rgba(210, 226, 242, 0.3);
 }
 
+/* El ícono principal flota y baila en el aire */
 .brain-icon {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--color-electric-blue);
-    filter: drop-shadow(0 0 15px var(--color-electric-blue));
-    animation: pulse 3s infinite ease-in-out;
+    filter: drop-shadow(2px 3px 0px #cce4f7);
+    animation: wiggle 3s infinite ease-in-out;
     margin-bottom: 15px;
+    display: inline-block;
 }
 
 header h1 {
     font-family: var(--font-cyber);
-    font-size: 1.4rem;
-    color: var(--color-text-muted);
-    letter-spacing: 2px;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 header h2 {
     font-family: var(--font-cyber);
-    font-size: 2rem;
-    color: #fff;
-    margin: 10px 0;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    font-size: 2.3rem;
+    color: var(--color-electric-blue);
+    margin: 8px 0;
+    font-weight: 700;
+    /* Efecto 3D de caricatura */
+    text-shadow: 3px 3px 0px #cce4f7, -1px -1px 0px #fff;
 }
 
 .subtitle {
-    color: var(--color-electric-blue);
-    font-weight: 300;
-    font-size: 1.1rem;
+    color: var(--color-neon-purple);
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 footer {
     margin-top: auto;
-    padding: 25px 0;
-    border-top: 1px solid rgba(157, 78, 221, 0.1);
-    background-color: rgba(6, 7, 10, 0.9);
-    font-size: 0.85rem;
+    padding: 30px 0;
+    border-top: 4px dashed #e2effa;
+    background-color: #ffffff;
+    font-size: 0.95rem;
     color: var(--text-muted);
+    text-align: center;
 }
 
 .footer-subtext {
     color: var(--color-neon-purple);
+    font-weight: 600;
     margin-top: 5px;
 }
 
 /* ==========================================================================
-   COMPONENTES: TARJETAS Y BOTONES
+   COMPONENTES: TARJETAS Y BOTONES (Estilo "Burbuja" o "Juguete")
    ========================================================================== */
 .card {
     background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border-radius: 16px;
+    border: 4px solid #e2effa;
+    border-radius: 28px;
     padding: 40px;
     margin: 40px 0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Sombra plana gruesa para dar sensación de relieve 3D de juguete */
+    box-shadow: 0 12px 0px var(--toy-shadow);
     transition: var(--transition-smooth);
+    position: relative;
 }
 
 .card:hover {
-    border-color: rgba(0, 210, 255, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 210, 255, 0.1), 
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 0px var(--toy-shadow);
+    border-color: #d2e8fc;
 }
 
+/* Botones Esponjosos con Relieve */
 .btn {
     display: inline-block;
     padding: 14px 32px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-family: var(--font-cyber);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: var(--transition-smooth);
+    transition: all 0.1s ease;
     border: none;
     outline: none;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* Botón Principal (Rosa Frutilla con relieve inferior) */
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-electric-blue), var(--color-neon-purple));
+    background: var(--color-incorrect); /* Rosa juguetón */
     color: #fff;
-    box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+    border-bottom: 5px solid #d45970; /* Borde inferior más oscuro */
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+    background: #ff9fb1;
+    transform: translateY(2px);
+    border-bottom-width: 3px;
 }
 
+.btn-primary:active {
+    transform: translateY(5px);
+    border-bottom-width: 0px;
+}
+
+/* Botón Secundario (Gris amigable con relieve) */
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #f1f5f9;
+    color: var(--text-main);
+    border: 3px solid #cbd5e1;
+    border-bottom: 5px solid #94a3b8;
 }
 
 .btn-secondary:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--color-electric-blue);
+    background: #e2e8f0;
+    transform: translateY(2px);
+    border-bottom-width: 3px;
+}
+
+.btn-secondary:active:not(:disabled) {
+    transform: translateY(5px);
+    border-bottom-width: 0px;
 }
 
 .btn:disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: not-allowed;
     transform: none !important;
+    border-bottom-width: 5px !important;
 }
 
 /* ==========================================================================
@@ -183,20 +217,26 @@ footer {
     display: flex;
     justify-content: space-between;
     font-family: var(--font-cyber);
-    font-size: 0.9rem;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text-muted);
     margin-bottom: 12px;
 }
 
 #timer {
     color: var(--color-electric-blue);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
+/* Barra de carga estilo Caramelo */
 .progress-bar-container {
     width: 100%;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    height: 14px;
+    background: #f1f5f9;
+    border: 3px solid #cbd5e1;
+    border-radius: 20px;
     overflow: hidden;
 }
 
@@ -204,14 +244,16 @@ footer {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, var(--color-electric-blue), var(--color-neon-purple));
-    transition: width 0.4s ease;
+    border-radius: 20px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #question-text {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 30px;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
 .options-grid {
@@ -221,42 +263,48 @@ footer {
     margin-bottom: 30px;
 }
 
+/* Botones de opción estilo Burbuja interactiva */
 .option-btn {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 16px 24px;
-    border-radius: 10px;
+    background: #f8fafc;
+    border: 3px solid #cbd5e1;
+    padding: 18px 24px;
+    border-radius: 20px;
     text-align: left;
     color: var(--text-main);
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: var(--font-sans);
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition-smooth);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 5px 0px #cbd5e1;
 }
 
 .option-btn:hover:not(.checked) {
-    background: rgba(0, 210, 255, 0.08);
+    background: #f0f9ff;
     border-color: var(--color-electric-blue);
-    padding-left: 30px;
+    box-shadow: 0 5px 0px var(--color-electric-blue);
+    transform: translateY(-2px);
 }
 
-/* Estados de validación visual */
+/* Estados de acierto y error con brincos */
 .option-btn.correct-answer {
-    background: rgba(16, 185, 129, 0.15) !important;
+    background: #f0fdf4 !important;
     border-color: var(--color-correct) !important;
-    color: #fff;
-    font-weight: 600;
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+    color: #15803d;
+    font-weight: 700;
+    box-shadow: 0 5px 0px var(--color-correct) !important;
+    animation: happyJump 0.5s ease-out;
 }
 
 .option-btn.wrong-answer {
-    background: rgba(239, 68, 68, 0.15) !important;
+    background: #fff5f5 !important;
     border-color: var(--color-incorrect) !important;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    color: #991b1b;
+    box-shadow: 0 5px 0px var(--color-incorrect) !important;
+    animation: shake 0.4s ease-in-out;
 }
 
 .quiz-footer {
@@ -265,25 +313,120 @@ footer {
 }
 
 /* ==========================================================================
+   PERSONAJE INTERACTIVO "DATI" Y SU LOGIC-VISUAL
+   ========================================================================== */
+
+/* Contenedor del personaje */
+.mascot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Cuerpo del muñequito (Flota de forma continua) */
+.mascot {
+    width: 130px;
+    height: 130px;
+    animation: floaty 4s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+/* Clase dinámica que se activa al festejar */
+.mascot.celebrate {
+    animation: happyJump 0.8s infinite ease-in-out;
+}
+
+/* Globo de diálogo divertido */
+.speech-bubble {
+    position: relative;
+    background: #ffffff;
+    border: 3px solid var(--color-electric-blue);
+    border-radius: 20px;
+    padding: 12px 18px;
+    margin-bottom: 15px;
+    max-width: 85%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 0px rgba(84, 178, 247, 0.15);
+}
+
+/* Triángulo decorativo del globo */
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    display: block;
+    width: 0;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 14px 14px 0;
+    border-style: solid;
+    border-color: var(--color-electric-blue) transparent;
+    display: block;
+    width: 0;
+    z-index: -1;
+}
+
+/* Confeti virtual que cae del cielo en puntajes altos */
+.confetti {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 99;
+    pointer-events: none;
+    animation: confettiFall 2.5s linear infinite;
+}
+
+/* ==========================================================================
    PANTALLA DE RESULTADOS
    ========================================================================== */
 #result-icon-container i {
-    font-size: 4.5rem;
+    font-size: 5rem;
     margin-bottom: 20px;
+    display: inline-block;
+}
+
+/* El ícono de copa o estrella brincará */
+#result-icon-container .fa-trophy,
+#result-icon-container .fa-star {
+    color: var(--pastel-yellow);
+    filter: drop-shadow(2px 3px 0 var(--color-incorrect));
+    animation: wiggle 2s infinite ease-in-out;
 }
 
 #result-status {
     font-family: var(--font-cyber);
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-electric-blue);
     margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #cce4f7;
 }
 
 .result-msg {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 35px;
 }
 
+/* Grilla de Mini Tarjetas */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -292,64 +435,105 @@ footer {
 }
 
 .stat-card {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
+    background: #f8fafc;
+    border: 3px solid #cbd5e1;
+    border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 6px 0px #cbd5e1;
 }
 
-.stat-card i { font-size: 1.5rem; }
+.stat-card i { font-size: 1.8rem; }
 .stat-card.correct i { color: var(--color-correct); }
 .stat-card.incorrect i { color: var(--color-incorrect); }
 .stat-card.percentage i { color: var(--color-electric-blue); }
 
 .stat-label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
     color: var(--text-muted);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .stat-value {
     font-family: var(--font-cyber);
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 700;
+    color: var(--text-main);
 }
 
 .loading-spinner {
     margin-top: 15px;
     color: var(--color-electric-blue);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 /* ==========================================================================
-   ANIMACIONES
+   ANIMACIONES DIVERTIDAS
    ========================================================================== */
 .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
+    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Flote suave continuo */
+@keyframes floaty {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* Salto de felicidad */
+@keyframes happyJump {
+    0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+    30% { transform: translateY(-25px) scale(1.1) rotate(5deg); }
+    50% { transform: translateY(0) scale(0.9) rotate(-5deg); }
+    70% { transform: translateY(-12px) scale(1.03) rotate(2deg); }
+}
+
+/* Tambaleo para logos y copas */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+}
+
+/* Vibración rápida para cuando eligen una respuesta incorrecta */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+/* Caída feliz de confeti */
+@keyframes confettiFall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
 @keyframes pulse {
-    0%, 100% { opacity: 0.8; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.animate-pulse {
+    animation: pulse 2s infinite ease-in-out;
 }
 
 /* ==========================================================================
    RESPONSIVE DESIGN (Media Queries)
    ========================================================================== */
 @media (max-width: 768px) {
-    header h2 { font-size: 1.5rem; }
-    .card { padding: 25px 20px; margin: 20px 0; }
+    header h2 { font-size: 1.7rem; }
+    .card { padding: 30px 20px; margin: 20px 0; border-radius: 24px; }
     .stats-grid { grid-template-columns: 1fr; gap: 15px; }
-    #question-text { font-size: 1.2rem; }
+    #question-text { font-size: 1.25rem; }
     .btn { width: 100%; text-align: center; }
 }
