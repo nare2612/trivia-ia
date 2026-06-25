@@ -468,6 +468,27 @@ input[type="text"]:focus {
 }
 
 /* ==========================================================================
+   ESTILO PARA EL LOGO DEL INSTITUTO (Efecto Cyberpunk integrado)
+   ========================================================================== */
+.institute-logo {
+    max-width: 100px;         /* Tamaño ideal para no tapar los títulos */
+    height: auto;             /* Mantiene la proporción perfecta */
+    margin-bottom: 20px;      /* Separa el logo del resto del contenido */
+    border-radius: 50%;       /* Recorta automáticamente a un círculo perfecto */
+    border: 3px solid var(--neon-cyan); /* Marco de color cian brillante */
+    box-shadow: 0 0 15px rgba(0, 246, 255, 0.6); /* Brillo neón difuminado */
+    transition: var(--transition-smooth);
+    display: inline-block;
+}
+
+/* Animación interactiva al pasar el mouse por encima */
+.institute-logo:hover {
+    transform: scale(1.08) rotate(5deg); /* Se agranda e inclina ligeramente */
+    border-color: var(--neon-pink);       /* El aro cambia a color rosa neón */
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
 @media (max-width: 768px) {
